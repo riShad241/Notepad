@@ -36,8 +36,10 @@ This splesh Screen i use a method which is , If user First Time open this app th
 ![Screenshot_66](https://github.com/riShad241/Notepad/assets/106663161/ef18f3eb-560f-4688-98f7-f9bd790a499f)
 
 4. Home page Show task use fire base:
-	![Screenshot_67](https://github.com/riShad241/Notepad/assets/106663161/499e4fe7-679d-45c3-9af6-fc6a3c59fb67)
-	![Screenshot_68](https://github.com/riShad241/Notepad/assets/106663161/4c018a31-c4e8-448e-bd89-fe6d92c79086)
+
+ 
+![Screenshot_67](https://github.com/riShad241/Notepad/assets/106663161/499e4fe7-679d-45c3-9af6-fc6a3c59fb67)
+			![Screenshot_68](https://github.com/riShad241/Notepad/assets/106663161/4c018a31-c4e8-448e-bd89-fe6d92c79086)
 
 
 

@@ -41,5 +41,24 @@ This splesh Screen i use a method which is , If user First Time open this app th
 ![Screenshot_67](https://github.com/riShad241/Notepad/assets/106663161/499e4fe7-679d-45c3-9af6-fc6a3c59fb67)
 			![Screenshot_68](https://github.com/riShad241/Notepad/assets/106663161/4c018a31-c4e8-448e-bd89-fe6d92c79086)
 
+   
+5. Add task page use fire base:
+
+   ![Screenshot_69](https://github.com/riShad241/Notepad/assets/106663161/621a64cb-ad8d-4ec3-8990-8347e6367879)
+
+ 
+6.Show Task Screen view:
+
+   
+   ![Screenshot_70](https://github.com/riShad241/Notepad/assets/106663161/7249b293-46a2-4bb8-8fa7-f1556cb97d6b)
+
+7.Task Edit use firebase:
+
+![Screenshot_71](https://github.com/riShad241/Notepad/assets/106663161/e7fad6a1-c2e6-450c-b7eb-996535744233)
+
+8. Task Delete use firebase:
+
+ 		
+   ![Screenshot_72](https://github.com/riShad241/Notepad/assets/106663161/d959a244-c5ef-46b3-b130-ceb6ceba48d9)
 
 

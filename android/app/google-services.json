@@ -1,0 +1,126 @@
+{
+  "project_info": {
+    "project_number": "58214534613",
+    "project_id": "ostad-practice",
+    "storage_bucket": "ostad-practice.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58214534613:android:86c918dc4c114d4596815c",
+        "android_client_info": {
+          "package_name": "com.example.firebase_add"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58214534613-9kagiado9k992trtm22921dep9q4v87r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc12Y2Lt6jJ00LOUoCIBVXQYrghic6UUg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58214534613-9kagiado9k992trtm22921dep9q4v87r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58214534613:android:b1310e98f249d80f96815c",
+        "android_client_info": {
+          "package_name": "com.example.firebase_full_example"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58214534613-9kagiado9k992trtm22921dep9q4v87r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc12Y2Lt6jJ00LOUoCIBVXQYrghic6UUg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58214534613-9kagiado9k992trtm22921dep9q4v87r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58214534613:android:c8cf97fbe1068b2296815c",
+        "android_client_info": {
+          "package_name": "com.example.food_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58214534613-9kagiado9k992trtm22921dep9q4v87r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc12Y2Lt6jJ00LOUoCIBVXQYrghic6UUg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58214534613-9kagiado9k992trtm22921dep9q4v87r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58214534613:android:1e5a02ea79354e8596815c",
+        "android_client_info": {
+          "package_name": "com.example.notepad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58214534613-9kagiado9k992trtm22921dep9q4v87r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc12Y2Lt6jJ00LOUoCIBVXQYrghic6UUg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58214534613-9kagiado9k992trtm22921dep9q4v87r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

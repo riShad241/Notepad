@@ -2,15 +2,63 @@
 
 A new Flutter project.
 
-## Getting Started
+This project base on Firebase. 
+This project Feature are :
 
-This project is a starting point for a Flutter application.
+		1.Splesh Screen use AnimatedTextkit or Lottie animation
+		2. Login use Firebase
+		3. SigUp use firebase
+		4. Home page Show task use fire base
+		5. Add task page use fire base
+		6.Show Task Screen view
+		7.Task Edit use firebase
+		8. Task Delete use firebase
 
-A few resources to get you started if this is your first Flutter project:
+  
+1.Splesh Screen use AnimatedTextkit or Lottie animation:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+ ![Screenshot_64](https://github.com/riShad241/Notepad/assets/106663161/947753d3-4b2c-4f1e-add0-11dc88b9d230)
+  
+This splesh Screen i use a method which is , If user First Time open this app this time First time show splesh screen then navigate to Log in screen then go to Home Screen . If user already login this app then user open this app first show Spelsh screen then go to home screen.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+			 void gotoLogInScreen() {
+    Future.delayed(Duration(seconds: 5)).then((value) =>
+        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
+            builder: (context) => user != null? HomePage():LogInScreen(showLoginPage: () {})),(route) => false,));
+  }
+
+ 2. Login use Firebase:
+    
+![Screenshot_65](https://github.com/riShad241/Notepad/assets/106663161/a7ae5621-fb11-40c6-bc2c-0ec747e3395e)
+
+3. SigUp use firebase:
+   
+![Screenshot_66](https://github.com/riShad241/Notepad/assets/106663161/ef18f3eb-560f-4688-98f7-f9bd790a499f)
+
+4. Home page Show task use fire base:
+
+ 
+![Screenshot_67](https://github.com/riShad241/Notepad/assets/106663161/499e4fe7-679d-45c3-9af6-fc6a3c59fb67)
+			![Screenshot_68](https://github.com/riShad241/Notepad/assets/106663161/4c018a31-c4e8-448e-bd89-fe6d92c79086)
+
+   
+5. Add task page use fire base:
+
+   ![Screenshot_69](https://github.com/riShad241/Notepad/assets/106663161/621a64cb-ad8d-4ec3-8990-8347e6367879)
+
+ 
+6.Show Task Screen view:
+
+   
+   ![Screenshot_70](https://github.com/riShad241/Notepad/assets/106663161/7249b293-46a2-4bb8-8fa7-f1556cb97d6b)
+
+7.Task Edit use firebase:
+
+![Screenshot_71](https://github.com/riShad241/Notepad/assets/106663161/e7fad6a1-c2e6-450c-b7eb-996535744233)
+
+8. Task Delete use firebase:
+
+ 		
+   ![Screenshot_72](https://github.com/riShad241/Notepad/assets/106663161/d959a244-c5ef-46b3-b130-ceb6ceba48d9)
+
+

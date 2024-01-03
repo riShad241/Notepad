@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:notepad/Screen/AuthScreen/forgetpassword.dart';
 import 'package:notepad/Screen/HomePage.dart';
 import 'package:notepad/Screen/AuthScreen/signUp.dart';
 
@@ -18,6 +19,13 @@ class _LogInScreenState extends State<LogInScreen> {
 
   LogIn() async {
     try {
+      showDialog(
+          context: context,
+          builder: (context) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          });
       await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
@@ -35,15 +43,18 @@ class _LogInScreenState extends State<LogInScreen> {
     }
   }
 
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 150),
+      body: Form(
+        key: _formkey,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
               child: SingleChildScrollView(
                 child: AnimatedTextKit(
                   animatedTexts: [
@@ -54,82 +65,97 @@ class _LogInScreenState extends State<LogInScreen> {
                 ),
               ),
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
-            child: TextFormField(
-              controller: _emailController,
-              decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.grey.shade200,
-                  hintText: 'Email',
-                  hintStyle: const TextStyle(color: Colors.grey),
-                  border: OutlineInputBorder(borderSide: BorderSide.none)),
+            const SizedBox(
+              height: 20,
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
-            child: TextFormField(
-              controller: _passwordController,
-              decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.grey.shade200,
-                  hintText: 'Password',
-                  hintStyle: const TextStyle(color: Colors.grey),
-                  border: OutlineInputBorder(borderSide: BorderSide.none)),
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Container(
-              height: 50,
-              width: 360,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: ElevatedButton(
-                onPressed: () {
-                  LogIn();
+            Padding(
+              padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
+              child: TextFormField(
+                validator: (String? value){
+                  if(value?.isEmpty ?? true){
+                    return 'Enter Your Email';
+                  }
                 },
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green.shade400),
-                child: const Icon(
-                  Icons.keyboard_arrow_right_outlined,
-                  size: 30,
-                ),
-              )),
-          const SizedBox(
-            height: 40,
-          ),
-          InkWell(
-            onTap: () {},
-            child: const Text(
-              'Forget password ?',
-              style: TextStyle(color: Colors.grey),
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                "Don't Have Account! ",
+                controller: _emailController,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey.shade200,
+                    hintText: 'Email',
+                    hintStyle: const TextStyle(color: Colors.grey),
+                    border: OutlineInputBorder(borderSide: BorderSide.none)),
               ),
-              TextButton(
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
+              child: TextFormField(
+                validator: (String? value){
+                  if(value?.isEmpty ?? true){
+                    return 'Enter your password!';
+                  }
+                },
+                controller: _passwordController,
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey.shade200,
+                    hintText: 'Password',
+                    hintStyle: const TextStyle(color: Colors.grey),
+                    border: OutlineInputBorder(borderSide: BorderSide.none)),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+                height: 50,
+                width: 360,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignUp(singupPage: () {  },)));
+                    if(!_formkey.currentState!.validate()){
+                      return ;
+                    }
+                    LogIn();
                   },
-                  child: const Text('Sing up'))
-            ],
-          )
-        ],
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green.shade400),
+                  child: const Icon(
+                    Icons.keyboard_arrow_right_outlined,
+                    size: 30,
+                  ),
+                )),
+            const SizedBox(
+              height: 40,
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> ForgetPasswordPage()));
+              },
+              child: const Text(
+                'Forget password ?',
+                style: TextStyle(color: Colors.grey),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  "Don't Have Account! ",
+                ),
+                TextButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => SignUp(singupPage: () {  },)));
+                    },
+                    child: const Text('Sing up'))
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

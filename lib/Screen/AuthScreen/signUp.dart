@@ -88,159 +88,196 @@ class _SignUpState extends State<SignUp> {
       return false;
     }
   }
+  final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 50),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                AnimatedTextKit(
-                  animatedTexts: [
-                    TyperAnimatedText('Join With Us ',
-                        textStyle: const TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.w700)),
-                  ],
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
-                  child: TextFormField(
-                    controller: _EmailController,
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.grey.shade200,
-                        hintText: 'Email',
-                        hintStyle: const TextStyle(color: Colors.grey),
-                        border:
-                            const OutlineInputBorder(borderSide: BorderSide.none)),
+      body: Form(
+        key: _globalKey,
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 50),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  AnimatedTextKit(
+                    animatedTexts: [
+                      TyperAnimatedText('Join With Us ',
+                          textStyle: const TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.w700)),
+                    ],
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
-                  child: TextFormField(
-                    controller: _FirstNameController,
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.grey.shade200,
-                        hintText: 'First name',
-                        hintStyle: const TextStyle(color: Colors.grey),
-                        border:
-                            const OutlineInputBorder(borderSide: BorderSide.none)),
+                  const SizedBox(
+                    height: 30,
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
-                  child: TextFormField(
-                    controller: _LastNameController,
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.grey.shade200,
-                        hintText: 'Last Name',
-                        hintStyle: const TextStyle(color: Colors.grey),
-                        border:
-                            const OutlineInputBorder(borderSide: BorderSide.none)),
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
-                  child: TextFormField(
-                    controller: _MobileController,
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.grey.shade200,
-                        hintText: 'Mobile',
-                        hintStyle: const TextStyle(color: Colors.grey),
-                        border:
-                            const OutlineInputBorder(borderSide: BorderSide.none)),
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
-                  child: TextFormField(
-                    controller: _PasswordController,
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.grey.shade200,
-                        hintText: 'Password',
-                        hintStyle: const TextStyle(color: Colors.grey),
-                        border:
-                            const OutlineInputBorder(borderSide: BorderSide.none)),
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
-                  child: TextFormField(
-                    controller: _ConfromPasswordController,
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.grey.shade200,
-                        hintText: 'Confirm Password',
-                        hintStyle: const TextStyle(color: Colors.grey),
-                        border:
-                            const OutlineInputBorder(borderSide: BorderSide.none)),
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Container(
-                    height: 50,
-                    width: 360,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        userSignUp();
+                  Padding(
+                    padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
+                    child: TextFormField(
+                      validator: (String? value){
+                        if(value?.isEmpty ?? true){
+                          return 'Enter email';
+                        }
                       },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green.shade400),
-                      child: const Icon(
-                        Icons.keyboard_arrow_right_outlined,
-                        size: 30,
-                      ),
-                    )),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      " Have  Account ! ",
+                      controller: _EmailController,
+                      decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.grey.shade200,
+                          hintText: 'Email',
+                          hintStyle: const TextStyle(color: Colors.grey),
+                          border:
+                              const OutlineInputBorder(borderSide: BorderSide.none)),
                     ),
-                    TextButton(
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
+                    child: TextFormField(
+                      validator: (String? value){
+                        if(value?.isEmpty ?? true){
+                          return 'Enter First Name';
+                        }
+                      },
+                      controller: _FirstNameController,
+                      decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.grey.shade200,
+                          hintText: 'First name',
+                          hintStyle: const TextStyle(color: Colors.grey),
+                          border:
+                              const OutlineInputBorder(borderSide: BorderSide.none)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
+                    child: TextFormField(
+                      validator: (String? value){
+                        if(value?.isEmpty ?? true){
+                          return 'Enter Last name';
+                        }
+                      },
+                      controller: _LastNameController,
+                      decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.grey.shade200,
+                          hintText: 'Last Name',
+                          hintStyle: const TextStyle(color: Colors.grey),
+                          border:
+                              const OutlineInputBorder(borderSide: BorderSide.none)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
+                    child: TextFormField(
+                      validator: (String? value){
+                        if(value?.isEmpty ?? true){
+                          return 'Enter Mobile number';
+                        }
+                      },
+                      controller: _MobileController,
+                      decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.grey.shade200,
+                          hintText: 'Mobile',
+                          hintStyle: const TextStyle(color: Colors.grey),
+                          border:
+                              const OutlineInputBorder(borderSide: BorderSide.none)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
+                    child: TextFormField(
+                      validator: (String? value){
+                        if(value?.isEmpty ?? true){
+                          return 'Enter password';
+                        }
+                      },
+                      controller: _PasswordController,
+                      decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.grey.shade200,
+                          hintText: 'Password',
+                          hintStyle: const TextStyle(color: Colors.grey),
+                          border:
+                              const OutlineInputBorder(borderSide: BorderSide.none)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 5, left: 20, right: 20),
+                    child: TextFormField(
+                      validator: (String? value){
+                        if(value?.isEmpty ?? true){
+                          return 'Enter confirm password';
+                        }
+                      },
+                      controller: _ConfromPasswordController,
+                      decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.grey.shade200,
+                          hintText: 'Confirm Password',
+                          hintStyle: const TextStyle(color: Colors.grey),
+                          border:
+                              const OutlineInputBorder(borderSide: BorderSide.none)),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                      height: 50,
+                      width: 360,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: ElevatedButton(
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => LogInScreen(
-                                        showLoginPage: () {},
-                                      )));
+                          if(!_globalKey.currentState!.validate()){
+                            return;
+                          }
+                          userSignUp();
                         },
-                        child: const Text('Log in'))
-                  ],
-                )
-              ],
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.green.shade400),
+                        child: const Icon(
+                          Icons.keyboard_arrow_right_outlined,
+                          size: 30,
+                        ),
+                      )),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        " Have  Account ! ",
+                      ),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LogInScreen(
+                                          showLoginPage: () {},
+                                        )));
+                          },
+                          child: const Text('Log in'))
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ),
